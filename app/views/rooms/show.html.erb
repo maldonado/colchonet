@@ -1,0 +1,17 @@
+<p>
+  <b><%= t'.title'%></b>
+  <%= @room.title %>
+</p>
+
+<p>
+  <b><%= t'.location'%></b>
+  <%= @room.location %>
+</p>
+
+<p>
+  <b><%= t'.description'%></b>
+  <%= @room.description %>
+</p>
+
+
+<%= link_to '.edit', edit_room_path(@room) %> 
