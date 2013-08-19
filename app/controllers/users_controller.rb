@@ -36,7 +36,7 @@ class UsersController < ApplicationController
   private 
   
   def can_change
-    unless user.signed_in? && current_user == user
+    unless user_signed_in? && current_user == user
       redirect_to user_path(params[:id])
     end
   end

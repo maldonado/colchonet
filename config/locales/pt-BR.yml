@@ -89,7 +89,7 @@ pt-BR:
             room_created: Quarto criado com sucesso !
             room_updated: Qurto atualizado !
         alert:
-            needs_login: Para continuar você precisa estar logado.    
+            needs_login: Para continuar você precisa estar logado.
     helpers:
         submit:
             user_session: 
