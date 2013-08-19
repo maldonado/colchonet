@@ -1,5 +1,6 @@
 # encoding utf-8
 class User < ActiveRecord::Base
+  has_many :rooms
   # defalt scope é cumulativo e sempre executado mesmo que nenhum outro scope seja utilizado.
   # default_scope where('confirmed_at IS NOT NULL')
   

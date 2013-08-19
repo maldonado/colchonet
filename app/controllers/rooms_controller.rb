@@ -1,7 +1,9 @@
 class RoomsController < ApplicationController
+  before_filter :require_authentication, :only => [:new, :edit, :create, :update, :destroy]
+  
   
   def index
-    @rooms = Room.all
+    @rooms = Room.most_recent
   end
 
   def show
@@ -9,15 +11,15 @@ class RoomsController < ApplicationController
   end
 
   def new
-    @room = Room.new
+    @room = current_user.rooms.build
   end
 
   def edit
-    @room = Room.find(params[:id])
+    @room = current_user.rooms.find(params[:id])
   end
 
   def create
-    @room = Room.new(params[:room])
+    @room = current_user.rooms.build(params[:room])
 
       if @room.save
         redirect_to @room, :notice => t('flash.notice.room_created')
@@ -27,7 +29,7 @@ class RoomsController < ApplicationController
   end
 
   def update
-    @room = Room.find(params[:id])
+    @room = current_user.rooms.find(params[:id])
 
     if @room.save
       redirect_to @room, :notice => t('flash.notice.room_updated')
@@ -38,7 +40,7 @@ class RoomsController < ApplicationController
   end
 
   def destroy
-    @room = Room.find(params[:id])
+    @room = current_user.rooms.find(params[:id])
     @room.destroy
     
     redirect_to rooms_url
