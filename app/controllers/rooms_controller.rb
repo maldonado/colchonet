@@ -1,7 +1,6 @@
 class RoomsController < ApplicationController
   before_filter :require_authentication, :only => [:new, :edit, :create, :update, :destroy]
   
-  
   def index
     @rooms = Room.most_recent
   end
