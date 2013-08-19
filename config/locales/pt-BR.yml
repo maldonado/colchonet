@@ -21,6 +21,11 @@ pt-BR:
             sign_up: Cadastre-se
             
     rooms:
+        index:
+            page_title: Lista de quartos
+            title: Título
+            location: Localização
+            description: Descrição
         new:
             title: Adicionar quarto
         edit:
